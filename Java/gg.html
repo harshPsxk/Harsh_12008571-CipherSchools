@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>Document</title>
+
+  <script>
+      function doSomething(){
+        textbox = document.getElementById("unametxt");
+        data = textbox.value;
+      
+        //validation in js
+        if(data == ""){
+          alert("username cannot be empty");
+          return;
+        }
+
+        var rbuttons = document.getElementsByName("rb");
+
+        var selectedButton;
+
+        for(var i = 0; i < rbuttons.length; i++){
+          if(rbuttons[i].checked){
+            selectedButton = rbuttons[i].value;
+            break;
+          }
+        }
+
+        var selectedOption = document.getElementById("qbox").value;
+
+        var skills;
+
+        var cboxes = document.getElementsByName("cbskills");
+
+        for(var i = 0; i < cboxes.length; i++){
+          if(cboxes[i].checked){
+            skills += cboxes[i].value;
+          }
+        }
+
+        alert("Welcome "+ data+ " gender: "+ selectedButton + " " + selectedOption + "you selected : " + skills);
+        // alert("welcome "+data);
+        
+      }
+  </script>
+</head>
+<body>
+  <h1> this is good</h1>
+  <table border="1" cellspacing="0" cellpadding="10">
+    <tr>
+        <td> UserName</td>
+        <td>
+          <input type="text" id="unametxt" />
+        </td>
+        
+    </tr>
+
+    <!-- <tr>
+      <td> Password</td>
+      <td>
+        <input type="password" id="pass" />
+      </td>
+      
+    </tr> -->
+
+    <tr>
+      <td> Gender</td>
+      <td>
+        <input type="radio" name="rb" value="Male" />Male
+        <input type="radio" name="rb" value="Female" />Female
+        
+      </td>
+      
+    </tr>
+
+    
+    <tr>
+      <td> Select qualifitation</td>
+      <td>
+        <select id="qbox">
+              <option value="name">Select</option>
+              <option value="B.Tech">B.Tech</option>
+              <option value="M.Tech">M.Tech</option>
+              <option value="PHD">PHD</option>
+              
+        </select>
+        
+      </td>
+      
+    </tr>
+
+    <tr>
+      <td> Select Your Skills</td>
+      <td>
+          <input type="checkbox" name="cbskills" value="Programming"/> Programming
+          
+          <input type="checkbox" name="cbskills" value="Testing"/> Testing
+          
+          <input type="checkbox" name="cbskills" value="Desgin"/> Desgin
+        
+      </td>
+      
+    </tr>
+    
+
+    
+
+
+    <tr>
+        <td colspan="2" align="right">
+          <input type="button" value="Click me" onclick="doSomething()" />
+        </td>
+    </tr>
+  </table>
+</body>
+</html>
